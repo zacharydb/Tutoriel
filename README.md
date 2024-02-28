@@ -7,6 +7,8 @@ Dans le domaine de l'analyse des données, la manipulation efficace des structur
 Imaginons que vous travaillez dans une entreprise de commerce électronique et que vous avez besoin d'analyser les données des ventes. Vous disposez d'un ensemble de données stocké dans un dictionnaire Python, mais vous devez le trier pour une analyse plus approfondie.
 
 # Exemple
+
+Exemple 1.py
 Considérons un exemple de dictionnaire représentant les ventes mensuelles de différents produits :
 
 python
