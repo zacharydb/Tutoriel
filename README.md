@@ -1,4 +1,5 @@
 # Tutoriel sur la manipulation des données en Python : Tri, accès et manipulation de dictionnaires
+ Comment peut-on trier un dictionnaire par valeur, par clé ou accéder à la liste de clés et de valeurs ?
 Introduction
 Dans le domaine de l'analyse des données, la manipulation efficace des structures de données est essentielle. Les dictionnaires sont l'une des structures de données les plus utilisées en Python pour stocker et manipuler des données. Dans ce tutoriel, nous explorerons différentes façons de trier un dictionnaire par valeur et par clé, ainsi que d'accéder à la liste des clés et des valeurs. Nous présenterons des exemples concrets issus du domaine des affaires pour illustrer chaque concept.
 
