@@ -6,13 +6,15 @@ Dans le domaine de l'analyse des données, la manipulation efficace des structur
 ## Contexte
 Imaginons que vous travaillez dans une entreprise de commerce électronique et que vous avez besoin d'analyser les données des ventes. Vous disposez d'un ensemble de données stocké dans un dictionnaire Python, mais vous devez le trier pour une analyse plus approfondie.
 
-# Exemple
+## Public cible
+Le tutoriel s'adresse à un public varié, incluant les professionnels des données et les analystes des données, mais cible spécifiquement les étudiants en administration des affaires souhaitant améliorer ses compétences en manipulation de données pour les affaires.
 
+
+### Tri par valeur
 Considérons un exemple de dictionnaire représentant les ventes mensuelles de différents produits :
 
     ventes = {'janvier': 1500,'février': 2200,'mars': 1800,'avril': 2500,'mai': 2000 }
     
-### Tri par valeur
 Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction sorted() avec le paramètre key pour spécifier que nous voulons trier par valeur :
 
 
