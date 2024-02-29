@@ -13,12 +13,14 @@ Imaginons que vous travaillez dans une entreprise de commerce électronique et q
 Le tutoriel s'adresse à un public varié, incluant les professionnels des données et les analystes des données, mais cible spécifiquement les étudiants en administration des affaires souhaitant améliorer ses compétences en manipulation de données pour les affaires.
 
 
-### Tri par valeur
+### Dictionnaire
 Considérons un exemple de dictionnaire représentant les ventes mensuelles de différents produits :
 ```python
     ventes = {'janvier': 1500,'février': 2200,'mars': 1800,'avril': 2500,'mai': 2000 }
 ```
-  
+Dans un dictionnaire, il y a des clés et des valeurs associés à celle ci, les clés peuvent être soit des mots ou des nombres dans notre cas les mois représentent les clés et les ventes sont les valeurs associés
+
+ ### Tri par valeur 
 Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction sorted() avec le paramètre key pour spécifier que nous voulons trier par valeur :
 
 ```python
