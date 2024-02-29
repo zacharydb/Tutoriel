@@ -25,7 +25,7 @@ Dans notre cas:
 - ventes = valeurs 
 
  ### Trier par fonction sorted
-Si on utlise seulement le fonction _sorted()_, python va seulement comprendre que nous voulons trier les clés sans les valeurs associer vu que les clés sont les élémentes par défaut du dictionnaire.
+Si on utlise seulement le fonction **sorted()**, python va seulement comprendre que nous voulons trier les clés sans les valeurs associer vu que les clés sont les élémentes par défaut du dictionnaire.
 Donc, si nous prenons la formule suivante:
 
 ```python
@@ -47,15 +47,16 @@ Donc, si nous prenons la formule suivante:
 
 ```python
     dict_items([('janvier': 1500),('février': 2200),('mars': 1800),('avril': 2500),('mai': 2000)])
-```   
+```
+Ceci est dû au fait que ventes.items() renvoie un objet de type dict_items, qui est essentiellement une vue sur les paires (clé, valeur) du dictionnaire. Il est important de noter que cette méthode renvoie un **itérable**, un objet capable de retourner ses éléments un par un. Cela signifie que vous pouvez parcourir les éléments de cet objet à l'aide d'une boucle et accéder à chaque élément séquentiellement..
 ### Tri par clé
-Donc pour trier le dictionnaire par clé (c'est-à-dire par mois), nous n'avons même pas besoin de spécifier le paramètre key, car c'est le comportement par défaut de la fonction sorted() et nous avons juste èa extraire les valeurs avec ce que nous voyons de voir:
+Donc pour trier le dictionnaire par clé (c'est-à-dire par mois), nous n'avons même pas besoin de spécifier le paramètre key, car c'est le comportement par défaut de la fonction **sorted()** et nous avons juste à extraire les valeurs avec ce que nous venons de voir :
 
 ```python
     ventes_triées = sorted(ventes.items())
         print(ventes_triées)
  ```
-Par contre si nous voulons avoir notre résultat nous devons le convertir en mettant un dict en avant de notre fonction:
+Par contre si nous voulons avoir notre résultat nous devons le convertir en mettant un **dict** en avant de notre fonction:
 
 ```python
     ventes_triées = dict(sorted(ventes.items()))
@@ -65,7 +66,7 @@ Cela produira :
 ```python
     {'avril': 2500, 'février': 2200, 'janvier': 1500, 'mai': 2000, 'mars': 1800}
  ```
-Note: Le système python va par défaut trier en ordre croissant et de A à Z, mais si non voulons changer l'ordre de croissant à décroissant et de Z à A nous pouvons seulement rajouter ***** à la fonction:
+Note: Le système python va par défaut trier en ordre croissant et de A à Z, mais si non voulons changer l'ordre de croissant à décroissant et de Z à A nous pouvons seulement rajouter **reverse=True** à la fonction:
   ### Tri par valeur 
 Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction sorted() avec le paramètre key pour spécifier que nous voulons trier par valeur :
 
@@ -95,15 +96,16 @@ Cela produira :
 ```
 
 ## Bonnes pratiques et astuces
-Utilisez la fonction sorted() pour trier un dictionnaire par valeur ou par clé.
-Utilisez les méthodes keys() et values() pour accéder aux clés et aux valeurs d'un dictionnaire.
-Répétabilité du contenu
+-Utilisez la fonction sorted() pour trier un dictionnaire par valeur ou par clé.
+-Utilisez les méthodes keys() et values() pour accéder aux clés et aux valeurs d'un dictionnaire.
+
+## Répétabilité du contenu
 En suivant ce tutoriel, vous devriez être en mesure de comprendre comment trier un dictionnaire par valeur ou par clé, ainsi que d'accéder à la liste des clés et des valeurs. Ces compétences sont fondamentales dans le domaine de l'analyse des données et peuvent être appliquées à diverses situations commerciales.
 
-Transfert des connaissances
+## Transfert des connaissances
 Les concepts présentés dans ce tutoriel peuvent être appliqués à de nombreuses autres situations commerciales impliquant la manipulation de données. Par exemple, vous pourriez utiliser ces techniques pour analyser les performances des produits, suivre les tendances de vente ou générer des rapports financiers.
 
-Limites du tutoriel et prochaines étapes
+## Limites du tutoriel et prochaines étapes
 Ce tutoriel a couvert les bases du tri et de l'accès aux dictionnaires en Python, mais il existe de nombreuses autres fonctionnalités et techniques avancées à explorer. Pour aller plus loin, vous pourriez vous intéresser à la manipulation de dictionnaires imbriqués, à l'utilisation de fonctions de rappel pour le tri personnalisé, ou à l'optimisation des performances pour les grands ensembles de données.
 
 ## Conclusion
