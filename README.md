@@ -15,41 +15,48 @@ Le tutoriel s'adresse à un public varié, incluant les professionnels des donn�
 
 ### Tri par valeur
 Considérons un exemple de dictionnaire représentant les ventes mensuelles de différents produits :
-
+```python
     ventes = {'janvier': 1500,'février': 2200,'mars': 1800,'avril': 2500,'mai': 2000 }
-    
+```
+  
 Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction sorted() avec le paramètre key pour spécifier que nous voulons trier par valeur :
 
-
+```python
     ventes_triées = dict(sorted(ventes.items(), key=lambda item: item[1]))
         print(ventes_triées)
-        
+```
+      
 Cela produira :
-
+```python
     {'janvier': 1500, 'mars': 1800, 'mai': 2000, 'février': 2200, 'avril': 2500}
-    
+```
+ 
 ### Tri par clé
 Pour trier le dictionnaire par clé (c'est-à-dire par mois), nous n'avons même pas besoin de spécifier le paramètre key, car c'est le comportement par défaut de la fonction sorted() :
-
+```python
     ventes_triées = dict(sorted(ventes.items()))
         print(ventes_triées)
-        
-Cela produira :
-
-    {'avril': 2500, 'février': 2200, 'janvier': 1500, 'mai': 2000, 'mars': 1800}
+ ```
     
+Cela produira :
+```python
+    {'avril': 2500, 'février': 2200, 'janvier': 1500, 'mai': 2000, 'mars': 1800}
+ ```
+ 
 ### Accès à la liste des clés et des valeurs
 Pour accéder à la liste des clés et des valeurs du dictionnaire, nous utilisons les méthodes keys() et values() respectivement :
-
+```python
     clés = ventes.keys()
     valeurs = ventes.values()
         print("Clés :", clés)
         print("Valeurs :", valeurs)
-        
+```
+     
 Cela produira :
-
+```python
     Clés : dict_keys(['janvier', 'février', 'mars', 'avril', 'mai'])
     Valeurs : dict_values([1500, 2200, 1800, 2500, 2000])
+```
 
 ## Bonnes pratiques et astuces
 Utilisez la fonction sorted() pour trier un dictionnaire par valeur ou par clé.
