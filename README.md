@@ -49,18 +49,23 @@ Donc, si nous prenons la formule suivante:
     dict_items([('janvier': 1500),('février': 2200),('mars': 1800),('avril': 2500),('mai': 2000)])
 ```   
 ### Tri par clé
-Donc pour trier le dictionnaire par clé (c'est-à-dire par mois), nous n'avons même pas besoin de spécifier le paramètre key, car c'est le comportement par défaut de la fonction sorted() :
+Donc pour trier le dictionnaire par clé (c'est-à-dire par mois), nous n'avons même pas besoin de spécifier le paramètre key, car c'est le comportement par défaut de la fonction sorted() et nous avons juste èa extraire les valeurs avec ce que nous voyons de voir:
+
+```python
+    ventes_triées = sorted(ventes.items())
+        print(ventes_triées)
+ ```
+Par contre si nous voulons avoir notre résultat nous devons le convertir en mettant un dict en avant de notre fonction:
 
 ```python
     ventes_triées = dict(sorted(ventes.items()))
         print(ventes_triées)
- ```
-    
+ ```    
 Cela produira :
 ```python
     {'avril': 2500, 'février': 2200, 'janvier': 1500, 'mai': 2000, 'mars': 1800}
  ```
-
+Note: Le système python va par défaut trier en ordre croissant et de A à Z, mais si non voulons changer l'ordre de croissant à décroissant et de Z à A nous pouvons seulement rajouter ***** à la fonction:
   ### Tri par valeur 
 Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction sorted() avec le paramètre key pour spécifier que nous voulons trier par valeur :
 
