@@ -1,10 +1,9 @@
 # Tutoriel sur la manipulation des données en Python : Tri, accès et manipulation de dictionnaires
- Comment peut-on trier un dictionnaire par valeur, par clé ou accéder à la liste de clés et de valeurs ?
- Le faire dans un contexte d'affaire et comment on pourrait l'utilisé au quotidien
- 
-Introduction
-Dans le domaine de l'analyse des données, la manipulation efficace des structures de données est essentielle. Les dictionnaires sont l'une des structures de données les plus utilisées en Python pour stocker et manipuler des données. Dans ce tutoriel, nous explorerons différentes façons de trier un dictionnaire par valeur et par clé, ainsi que d'accéder à la liste des clés et des valeurs. Nous présenterons des exemples concrets issus du domaine des affaires pour illustrer chaque concept.
 
+## Introduction
+Dans le domaine de l'analyse des données, la manipulation efficace des structures de données est essentielle. Les dictionnaires sont l'une des structures de données les plus utilisées en Python pour stocker et manipuler des données. Un dictionnaire est une collection non ordonnée, mutable et indexée d'éléments. Chaque élément est représenté par une paire clé-valeur, où chaque clé est unique et associée à une valeur spécifique. Cette structure de données flexible et puissante permet de représenter efficacement une grande variété d'informations, ce qui en fait un outil indispensable pour les professionnels des données et les analystes.
+
+Dans ce tutoriel, nous explorerons différentes façons de trier un dictionnaire par valeur et par clé, ainsi que d'accéder à la liste des clés et des valeurs. Nous présenterons des exemples concrets issus du domaine des affaires pour illustrer chaque concept. Que vous soyez un analyste de données chevronné ou un étudiant en administration des affaires souhaitant perfectionner ses compétences en manipulation de données, ce tutoriel vous fournira les connaissances nécessaires pour tirer pleinement parti des dictionnaires en Python dans un contexte professionnel.
 
 ## Contexte
 Imaginons que vous travaillez dans une entreprise de commerce électronique et que vous avez besoin d'analyser les données des ventes. Vous disposez d'un ensemble de données stocké dans un dictionnaire Python, mais vous devez le trier pour une analyse plus approfondie.
@@ -21,11 +20,11 @@ Considérons un exemple de dictionnaire représentant les ventes mensuelles de d
 Dans un dictionnaire, il y a des clés et des valeurs associés à celle ci, les clés peuvent être soit des mots ou des nombres.
 
 Dans notre cas:
-- mois = clés
-- ventes = valeurs 
+- clés = mois
+- valeurs = ventes
 
  ### Trier par fonction sorted
-Si on utlise seulement le fonction **sorted()**, python va seulement comprendre que nous voulons trier les clés sans les valeurs associer vu que les clés sont les élémentes par défaut du dictionnaire.
+Si on utlise seulement le fonction `sorted()`, python va seulement comprendre que nous voulons trier les clés sans les valeurs associer vu que les clés sont les élémentes par défaut du dictionnaire.
 Donc, si nous prenons la formule suivante:
 
 ```python
@@ -48,15 +47,15 @@ Donc, si nous prenons la formule suivante:
 ```python
     dict_items([('janvier': 1500),('février': 2200),('mars': 1800),('avril': 2500),('mai': 2000)])
 ```
-Ceci est dû au fait que ventes.items() renvoie un objet de type dict_items, qui est essentiellement une vue sur les paires (clé, valeur) du dictionnaire. Il est important de noter que cette méthode renvoie un **itérable**, un objet capable de retourner ses éléments un par un. Cela signifie que vous pouvez parcourir les éléments de cet objet à l'aide d'une boucle et accéder à chaque élément séquentiellement..
+Ceci est dû au fait que `ventes.items()` renvoie un objet de type `dict_items`, qui est essentiellement une vue sur les paires (clé, valeur) du dictionnaire. Il est important de noter que cette méthode renvoie un **itérable**, un objet capable de retourner ses éléments un par un. Cela signifie que vous pouvez parcourir les éléments de cet objet à l'aide d'une boucle et accéder à chaque élément séquentiellement..
 ### Tri par clé
-Donc pour trier le dictionnaire par clé (c'est-à-dire par mois), nous n'avons même pas besoin de spécifier le paramètre key, car c'est le comportement par défaut de la fonction **sorted()** et nous avons juste à extraire les valeurs avec ce que nous venons de voir :
+Donc pour trier le dictionnaire par clé (c'est-à-dire par mois), nous n'avons même pas besoin de spécifier le paramètre key, car c'est le comportement par défaut de la fonction `sorted()` et nous avons juste à extraire les valeurs avec ce que nous venons de voir :
 
 ```python
     ventes_triées = sorted(ventes.items())
         print(ventes_triées)
  ```
-Par contre si nous voulons avoir notre résultat nous devons le convertir en mettant un **dict** en avant de notre fonction:
+Par contre si nous voulons avoir notre résultat nous devons le convertir en mettant un `dict` en avant de notre fonction:
 
 ```python
     ventes_triées = dict(sorted(ventes.items()))
@@ -68,12 +67,30 @@ Cela produira :
  ```
 Note: Le système python va par défaut trier en ordre croissant et de A à Z, mais si non voulons changer l'ordre de croissant à décroissant et de Z à A nous pouvons seulement rajouter **reverse=True** à la fonction:
   ### Tri par valeur 
-Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction sorted() avec le paramètre key pour spécifier que nous voulons trier par valeur :
+Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction `sorted()` avec le paramètre `key` pour spécifier que nous voulons trier par valeur.
+
+Nous allons prendre la fonction lambda pour simplifier les choses, le lambda est une fonction anonyme en Python. Il est souvent utilisé comme argument pour les fonctions qui attendent une fonction en paramètre, comme dans notre cas avec la fonction `sorted()` :
+
+```python
+    sorted(ventes.items(), key=lambda)
+```
+Il faudra rajouter la partie du code qui trie les éléments du dictionnaire ventes en utilisant la fonction `sorted()`. Le paramètre `key` spécifie une fonction de comparaison qui est utilisée pour extraire une clé de chaque élément de `ventes.items()` afin de les comparer et de les trier en conséquence. 
+
+Donc nous rajoutons :
+
+```python
+    (sorted(ventes.items(), key=lambda item: item[1]))
+```
+
+ Le lambda est utilisé comme fonction de comparaison et définit une fonction qui prend un élément (ici, une paire clé-valeur) comme argument et retourne `item[1]`, c'est-à-dire la valeur associée à cette paire clé-valeur. 
+ 
+ Ainsi, la fonction de comparaison va comparer les valeurs des paires clé-valeur du dictionnaire ventes et pour avoir notre dictionnaire nous devons seulement rajouter de nouveau:
 
 ```python
     ventes_triées = dict(sorted(ventes.items(), key=lambda item: item[1]))
         print(ventes_triées)
 ```
+
       
 Cela produira :
 ```python
@@ -81,7 +98,7 @@ Cela produira :
 ```
  
 ### Accès à la liste des clés et des valeurs
-Pour accéder à la liste des clés et des valeurs du dictionnaire, nous utilisons les méthodes keys() et values() respectivement :
+Pour accéder à la liste des clés et des valeurs du dictionnaire, nous utilisons les méthodes `keys()` et `values()` respectivement :
 ```python
     clés = ventes.keys()
     valeurs = ventes.values()
@@ -96,8 +113,8 @@ Cela produira :
 ```
 
 ## Bonnes pratiques et astuces
--Utilisez la fonction sorted() pour trier un dictionnaire par valeur ou par clé.
--Utilisez les méthodes keys() et values() pour accéder aux clés et aux valeurs d'un dictionnaire.
+-Utilisez la fonction `sorted(`) pour trier un dictionnaire par valeur ou par clé.
+-Utilisez les méthodes `keys()` et `values()` pour accéder aux clés et aux valeurs d'un dictionnaire.
 
 ## Répétabilité du contenu
 En suivant ce tutoriel, vous devriez être en mesure de comprendre comment trier un dictionnaire par valeur ou par clé, ainsi que d'accéder à la liste des clés et des valeurs. Ces compétences sont fondamentales dans le domaine de l'analyse des données et peuvent être appliquées à diverses situations commerciales.
