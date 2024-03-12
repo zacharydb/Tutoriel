@@ -126,10 +126,9 @@ Les concepts présentés dans ce tutoriel peuvent être appliqués à de nombreu
 Ce tutoriel a couvert les bases du tri et de l'accès aux dictionnaires en Python, mais il existe de nombreuses autres fonctionnalités et techniques avancées à explorer. Pour aller plus loin, vous pourriez vous intéresser à la manipulation de dictionnaires imbriqués, à l'utilisation de fonctions de rappel pour le tri personnalisé, ou à l'optimisation des performances pour les grands ensembles de données.
 
 ## Conclusion
-Dans ce tutoriel, nous avons exploré différentes façons de trier un dictionnaire par valeur et par clé, ainsi que d'accéder à la liste des clés et des valeurs. Nous avons présenté des exemples concrets issus du domaine des affaires pour illustrer chaque concept. En suivant ce tutoriel, vous avez acquis des compétences précieuses en manipulation de données en Python, qui vous seront utiles dans de nombreuses situations commerciales.
+Dans ce tutoriel, nous avons exploré différentes façons de trier un dictionnaire par valeur et par clé, ainsi que d'accéder à la liste des clés et des valeurs. Nous avons présenté des exemples concrets issus du domaine des affaires pour illustrer chaque concept. En suivant ce tutoriel, vous avez acquis des compétences précieuses en manipulation de données en Python, qui vous seront utiles dans de nombreuses situations commerciales. Ces compétences sont indispensables pour analyser et interpréter les données, prendre des décisions éclairées et optimiser les performances de votre entreprise.
 
 J'espère que ce tutoriel vous a été utile et vous souhaite beaucoup de succès dans votre parcours d'apprentissage de l'analyse des données en Python !
-
 
 
 
