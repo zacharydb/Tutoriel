@@ -30,10 +30,10 @@ Donc, si nous prenons la formule suivante:
 ```python
         print(sorted(ventes))
  ```
-**** Nous allons avoir comme résultat seuelemnt une liste des clés triés:
+ Nous allons avoir comme résultat seulement une liste des clés triés:
 
 ```python
-    ['avril','février','janvier','mai','mars']
+    ['avril', 'février', 'janvier', 'mai', 'mars']
 ```
  ### Extraire les valeurs
 Si nous voulons voir les valeurs en plus des clés dans notre résultat, nous devons les extraires en tant qu'items
@@ -42,10 +42,10 @@ Donc, si nous prenons la formule suivante:
 ```python
         print(ventes.items())
  ```
-**** Nous allons avoir comme résultat notre dictionnaire en format tuple:
+Nous allons avoir comme résultat notre dictionnaire en format tuple:
 
 ```python
-    dict_items([('janvier': 1500),('février': 2200),('mars': 1800),('avril': 2500),('mai': 2000)])
+    dict_items([('janvier', 1500), ('février', 2200), ('mars', 1800), ('avril', 2500), ('mai', 2000)])
 ```
 Ceci est dû au fait que `ventes.items()` renvoie un objet de type `dict_items`, qui est essentiellement une vue sur les paires (clé, valeur) du dictionnaire. Il est important de noter que cette méthode renvoie un **itérable**, un objet capable de retourner ses éléments un par un. Cela signifie que vous pouvez parcourir les éléments de cet objet à l'aide d'une boucle et accéder à chaque élément séquentiellement..
 ### Tri par clé
