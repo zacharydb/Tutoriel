@@ -65,7 +65,11 @@ Cela produira :
 ```python
     {'avril': 2500, 'février': 2200, 'janvier': 1500, 'mai': 2000, 'mars': 1800}
  ```
-Note: Le système python va par défaut trier en ordre croissant et de A à Z, mais si non voulons changer l'ordre de croissant à décroissant et de Z à A nous pouvons seulement rajouter **reverse=True** à la fonction:
+Note: Le système python va par défaut trier en ordre croissant et de A à Z, mais si non voulons changer l'ordre de croissant à décroissant et de Z à A nous pouvons seulement rajouter `reverse=True` à la fonction:
+ ```  
+ventes_triées_reverse = dict(sorted(ventes.items(), reverse=True))
+print(ventes_triées_reverse)
+ ```  
   ### Tri par valeur 
 Pour trier ce dictionnaire par valeur (c'est-à-dire par montant de ventes), nous pouvons utiliser la fonction `sorted()` avec le paramètre `key` pour spécifier que nous voulons trier par valeur.
 
@@ -128,8 +132,7 @@ Ce tutoriel a couvert les bases du tri et de l'accès aux dictionnaires en Pytho
 ## Conclusion
 Dans ce tutoriel, nous avons exploré différentes façons de trier un dictionnaire par valeur et par clé, ainsi que d'accéder à la liste des clés et des valeurs. Nous avons présenté des exemples concrets issus du domaine des affaires pour illustrer chaque concept. En suivant ce tutoriel, vous avez acquis des compétences précieuses en manipulation de données en Python, qui vous seront utiles dans de nombreuses situations commerciales. Ces compétences sont indispensables pour analyser et interpréter les données, prendre des décisions éclairées et optimiser les performances de votre entreprise.
 
-J'espère que ce tutoriel vous a été utile et vous souhaite beaucoup de succès dans votre parcours d'apprentissage de l'analyse des données en Python !
-
+J'espère que ce tutoriel vous a été utile et vous souhaite beaucoup de succès dans votre parcours d'apprentissage de l'analyse des données en Python!
 
 
 
